@@ -6,7 +6,5 @@ public class Main {
         String s = "hello";
         String ne = new String("hello");
         System.out.println(s.equals(ne));
-
-
     }
 }
