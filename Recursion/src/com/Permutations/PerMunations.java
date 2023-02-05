@@ -43,7 +43,7 @@ public class PerMunations {
             String s = p.substring(i, p.length());
             ans.addAll(permutationsList(f + ch + s, up.substring(1)));
         }
-        ans
+
         return ans;
     }
 
