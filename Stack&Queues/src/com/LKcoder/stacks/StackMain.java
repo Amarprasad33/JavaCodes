@@ -1,7 +1,7 @@
 package com.LKcoder.stacks;
 
-public class StackMain {
-    public static void main(String[] args) throws Exception {
+public class StackMain  {
+    public static void main(String[] args) throws StackException {
         DynamicStack stack = new DynamicStack();
 
         stack.push(23);
