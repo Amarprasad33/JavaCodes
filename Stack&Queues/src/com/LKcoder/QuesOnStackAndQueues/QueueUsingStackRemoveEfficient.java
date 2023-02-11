@@ -1,10 +1,8 @@
 package com.LKcoder.QuesOnStackAndQueues;
 
-import com.sun.source.tree.WhileLoopTree;
-
 import java.util.Stack;
 
-public class QueueUsingStack_232 {
+public class QueueUsingStackRemoveEfficient {
     private Stack<Integer> stk1 ;
     private Stack<Integer> stk2 ;
     public static void main(String[] args) {
@@ -19,34 +17,24 @@ public class QueueUsingStack_232 {
 
 
     public void push(int x) {
+        while (!stk1.empty()){
+            stk2.push( stk1.pop());
+        }
         stk1.push(x);
+        while (!stk2.empty()){
+            stk1.push(stk2.pop());
+        }
     }
 
     public int pop() {
-        while (!stk1.empty()){
-            stk2.push( stk1.pop());
-        }
-        int removed = stk2.pop();
-        while (!stk2.empty()){
-            stk1.push(stk2.pop());
-        }
-        return removed;
+        return stk1.pop();
     }
 
     public int peek() {
-        while (!stk1.empty()){
-            stk2.push( stk1.pop());
-        }
-        int peeked = stk2.peek();
-        while (!stk2.empty()){
-            stk1.push(stk2.pop());
-        }
-        return peeked;
+       return stk1.peek();
     }
 
     public boolean empty() {
         return stk1.isEmpty();
     }
-
-
 }
