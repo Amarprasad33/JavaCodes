@@ -6,6 +6,8 @@ public class qs_1675 {
         System.out.println(minimumDeviation(arr));
     }
 
+    // LeetCode Hard question
+    //https://leetcode.com/problems/minimize-deviation-in-array/description/
     public static int minimumDeviation(int[] nums) {
         TreeSet<Integer> set = new TreeSet<>();
         for (int x : nums){
@@ -26,4 +28,6 @@ public class qs_1675 {
         }
         return ans;
     }
+
+    // Similar approach
 }
