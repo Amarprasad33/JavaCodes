@@ -29,5 +29,5 @@ public class qs_1675 {
         return ans;
     }
 
-    // Similar approach
+
 }
