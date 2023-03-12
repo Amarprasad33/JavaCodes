@@ -12,5 +12,28 @@ public class Main {
         Collections.sort(list);
         System.out.println("After osrt" + list);
 
+        int[] arr = {-2,-3,0};
+        maxScore(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static int maxScore(int[] nums) {
+        int f = 0, s = nums.length-1;
+        while(f < s){
+            if(nums[f] > 0) f++;
+
+            if(nums[f] < 0 && nums[s] > 0){
+                swap(nums, f, s);
+            }
+
+            s--;
+        }
+        return 0;
+    }
+
+    private static void swap(int[] nums, int f, int s){
+        int temp = nums[f];
+        nums[f] = nums[s];
+        nums[s] = temp;
     }
 }
