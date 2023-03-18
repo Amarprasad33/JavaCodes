@@ -1,4 +1,4 @@
-package com.LKcoder;
+package com.LKcoder.randomQs;
 
 import java.util.LinkedList;
 

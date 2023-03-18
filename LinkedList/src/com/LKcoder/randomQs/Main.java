@@ -1,4 +1,4 @@
-package com.LKcoder;
+package com.LKcoder.randomQs;
 
 public class Main {
 

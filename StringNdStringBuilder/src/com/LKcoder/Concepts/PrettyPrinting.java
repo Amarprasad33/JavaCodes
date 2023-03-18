@@ -1,4 +1,4 @@
-package com.LKcoder;
+package com.LKcoder.Concepts;
 
 public class PrettyPrinting {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.LKcoder;
+package com.LKcoder.Concepts;
 
 import java.util.Locale;
 
