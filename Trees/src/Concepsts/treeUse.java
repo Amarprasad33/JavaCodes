@@ -3,6 +3,8 @@ package Concepsts;
 import com.sun.source.tree.Tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 class TreeNode<T> {
@@ -31,8 +33,34 @@ public class treeUse {
 //        root.children.add(node3);
 //        node2.children.add(node4);
 
-        TreeNode<Integer> root = takeInput();
+//        TreeNode<Integer> root = takeInput();
+//        print(root);
+
+        TreeNode<Integer> root = takeInputLevelWise();
         print(root);
+
+    }
+
+    public static TreeNode<Integer> takeInputLevelWise() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter root data");
+        int rootData = s.nextInt();
+        Queue<TreeNode> pendingNode = new LinkedList<>();
+        TreeNode<Integer> root = new TreeNode<>(rootData);
+        pendingNode.add(root);
+        while (!pendingNode.isEmpty()){
+            TreeNode<Integer> frontNode = pendingNode.poll();
+            System.out.println("Enter the number of children of " + frontNode.data);
+            int numChildren = s.nextInt();
+            for (int i = 0; i < numChildren; i++) {
+                System.out.println("Enter " + (i+1) + " th child of " + frontNode.data);
+                int child = s.nextInt();
+                TreeNode<Integer> childNode = new TreeNode<>(child);
+                frontNode.children.add(childNode);
+                pendingNode.add(childNode);
+            }
+        }
+        return root;
     }
 
     public static TreeNode<Integer> takeInput(){
@@ -50,6 +78,7 @@ public class treeUse {
         return  root;
     }
 
+    // Prints the tree recursively
     public static void print(TreeNode<Integer> root){
         String s = root.data + ":";
         for (int i = 0; i < root.children.size(); i++ ){
@@ -60,9 +89,18 @@ public class treeUse {
             print(root.children.get(i));
         }
     }
-
-
-
-
+    public static void printLevelWise(TreeNode<Integer> root){
+        Queue<TreeNode> level = new LinkedList<>();
+        level.add(root);
+        while (!level.isEmpty()){
+            TreeNode<Integer> frontNode = level.remove();
+            String s = frontNode.data + ":";
+            for (int i = 0; i < frontNode.children.size(); i++ ){
+                s += frontNode.children.get(i).data + ", ";
+                level.add(frontNode.children.get(i));
+            }
+            System.out.println(s);
+        }
+    }
 
 }
