@@ -2,6 +2,8 @@ package treeLeetCode;
 
 
 
+import com.sun.source.tree.Tree;
+
 import java.util.*;
 
  class TreeNode {
@@ -20,7 +22,38 @@ import java.util.*;
 public class qs_102 {
 
     public static void main(String[] args) {
+        TreeNode Proot = new TreeNode(0);
+        TreeNode Qroot = new TreeNode(0);
+        Proot.left = new TreeNode(-5);
+        Qroot.left = new TreeNode(-8);
 
+        System.out.println(isSameTree(Proot, Qroot));
+    }
+
+    static boolean value = true;
+    public static  boolean isSameTree(TreeNode p, TreeNode q) {
+        if(p == null && q == null){
+            if(value == false) return  false;
+            value = true;
+            return value;
+        }
+        if(p == null || q == null ) {
+            value = false;
+            return value;
+        }
+
+        if(p.val != q.val){
+            value = false;
+            return value;
+        }
+        isSameTree(p.left, q.left);
+        if(p.val != q.val){
+            value = false;
+            return value;
+        }
+        isSameTree(p.right, q.right);
+
+        return value;
     }
 
 
