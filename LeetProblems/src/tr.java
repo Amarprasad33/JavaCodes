@@ -1,13 +1,19 @@
 import java.util.Arrays;
-
+import java.util.*;
 public class tr {
     public static void main(String[] args) {
 
 //        System.out.println(a);
 //        String q = "RR.L";
 //        System.out.println(pushDominoes(q));
-        String str = "a good   example";
-        System.out.println(reverseWords(str));
+//        String str = "a good   example";
+//        System.out.println(reverseWords(str));
+
+        String s1 = "Testing";
+        String s2 = "Text";
+        System.out.println(s1=s2);
+
+
     }
 
 
