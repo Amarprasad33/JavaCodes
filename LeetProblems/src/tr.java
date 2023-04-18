@@ -9,11 +9,25 @@ public class tr {
 //        String str = "a good   example";
 //        System.out.println(reverseWords(str));
 
-        String s1 = "Testing";
-        String s2 = "Text";
-        System.out.println(s1=s2);
+        String s1 = "abcd";
+        String s2 = "pq";
 
+        System.out.println(s1);
+        System.out.println(mergeAlternately(s1, s2));
+    }
+    public static String mergeAlternately(String word1, String word2) {
+        int i = 0, j = 0;
+        StringBuilder sb = new StringBuilder();
+        while(i < word1.length() && j < word2.length()){
+            sb.append(word1.charAt(i++));
+            sb.append(word2.charAt(j++));
+        }
+        while(i < word1.length())
+            sb.append(word1.charAt(i++));
+        while(j < word2.length())
+            sb.append(word2.charAt(j++));
 
+        return sb.toString();
     }
 
 
