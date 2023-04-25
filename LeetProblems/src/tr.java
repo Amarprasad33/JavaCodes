@@ -15,6 +15,7 @@ public class tr {
         System.out.println(s1);
         System.out.println(mergeAlternately(s1, s2));
     }
+
     public static String mergeAlternately(String word1, String word2) {
         int i = 0, j = 0;
         StringBuilder sb = new StringBuilder();
@@ -50,6 +51,8 @@ public class tr {
         }
         return ans;
     }
+
+    //Correct solution
 
     public static String reverseWords(String s) {
         int n = s.length();
