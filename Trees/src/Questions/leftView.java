@@ -26,15 +26,6 @@ public class leftView {
         }
     }
 
-    static void printRightView(TreeNode root){
-        ArrayList<TreeNode> list = new ArrayList<>();
-//        list.add(root);
-        rightViewHelper(root, list, 0);
-        for(TreeNode cur: list){
-            System.out.println(cur.data);
-        }
-    }
-
      static void leftViewHelper(TreeNode root, ArrayList<TreeNode> ls, int level) {
         if(root == null) return;
 
@@ -44,6 +35,15 @@ public class leftView {
 
         leftViewHelper(root.left, ls, level+1);
         leftViewHelper(root.right, ls, level+1);
+    }
+
+    static void printRightView(TreeNode root){
+        ArrayList<TreeNode> list = new ArrayList<>();
+//        list.add(root);
+        rightViewHelper(root, list, 0);
+        for(TreeNode cur: list){
+            System.out.println(cur.data);
+        }
     }
 
     static void rightViewHelper(TreeNode root, ArrayList<TreeNode> ls, int level) {
