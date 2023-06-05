@@ -18,7 +18,7 @@ public class qs_1721 {
         }
     }
 
-    public static ListNode swapNodes(ListNode head, int k) {
+    public static ListNode swapNodes2(ListNode head, int k) {
         ListNode temp = head;
         int n =1, i = 1;
         while(temp != null){
@@ -47,6 +47,30 @@ public class qs_1721 {
             curr = curr.next;
             i++;
         }
+        return head;
+    }
+
+    // A better sol
+    public static ListNode swapNodes(ListNode head, int k) {
+        ListNode fast  = head;
+        ListNode slow = head;
+
+        while (k-1>0){
+            fast = fast.next;
+            k--;
+        }
+        ListNode node1 = fast;
+
+        while(fast.next != null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+        ListNode node2 = slow;
+
+        int tmp = node1.val;
+        node1.val = node2.val;
+        node2.val = tmp;
+
         return head;
     }
 }
