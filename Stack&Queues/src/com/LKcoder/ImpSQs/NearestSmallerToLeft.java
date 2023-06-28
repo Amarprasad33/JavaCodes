@@ -76,5 +76,7 @@ public class NearestSmallerToLeft {
         return ls;
     }
 
+    // OUTPUT: 2, 2, -1, 8, -1
+
 
 }
