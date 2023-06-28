@@ -43,6 +43,7 @@ public class NearestGreaterToRight {
         return ls;
     }
 
+//    Next Greater to Left
 
     public static List<Integer> NearestGreaterToLeft(int[] arr, int n){
         Stack<Integer> stk = new Stack<>();
