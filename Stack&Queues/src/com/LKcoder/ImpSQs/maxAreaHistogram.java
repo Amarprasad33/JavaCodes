@@ -62,7 +62,7 @@ public class maxAreaHistogram {
     public static List<Integer> NSR(int[] arr, int n){
         Stack<int[]> stk = new Stack<>();
         List<Integer> right = new ArrayList<>();
-        int pseudoIndex = 7;   // Setting this to 7 just for the example used in Main function
+        int pseudoIndex = arr.length+1;   
 
         // Code for Nearest smaller to left
         for (int i = n-1; i >= 0; i--){
