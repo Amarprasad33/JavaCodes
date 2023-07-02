@@ -5,12 +5,42 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
-public class maxAreaHistogram {
+public class maxAreaRectangleBinaryMatrix {
+
     public static void main(String[] args) {
-        int[] arr = {6, 2, 5, 4, 5, 1, 6};
-        int n = arr.length;
-        System.out.println(MAH(arr, n));
+        int[][] arr = {
+                {0, 1, 1, 0},
+                {1, 1, 1, 1},
+                {1, 1, 1, 1},
+                {1, 1, 0, 0}
+        };
+        System.out.println(maxAreaRectangle(arr, 4, 4));
+
     }
+
+    public static int maxAreaRectangle(int[][] arr, int n, int m){
+        int max = 0;
+        int[] histogram = new int[m];
+        for (int i = 0; i < m; i++) {
+            histogram[i] = arr[0][i];
+        }
+        max = MAH(histogram, histogram.length);
+
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if(arr[i][j] == 0){
+                    histogram[j] = 0;
+                }else {
+                    histogram[j] = histogram[j] + arr[i][j];
+                }
+            }
+            max = Math.max(max, MAH(histogram, histogram.length));
+        }
+        return max;
+    }
+
+
+
 
     public static int MAH (int[] arr, int n){
         List<Integer> left = NSL(arr, n);
