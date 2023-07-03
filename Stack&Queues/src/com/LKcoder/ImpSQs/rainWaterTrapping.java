@@ -1,17 +1,17 @@
 package com.LKcoder.ImpSQs;
 
+import java.util.Stack;
+
 public class rainWaterTrapping {
     public static void main(String[] args) {
-
+        int[] arr = {0,1,0,2,1,0,1,3,2,1,2,1};
+        System.out.println(trap(arr));
     }
-
-
-
 
 
     // Rain water trapping using two arrays
     // https://leetcode.com/problems/trapping-rain-water/description/
-    public int trap(int[] height) {
+    public static int trap(int[] height) {
         int n = height.length;
         int[] left = new int[n];  // left array contains the maximum height building on left
         int[] right = new int[n]; // right array contains the maximum height building on right
