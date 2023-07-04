@@ -4,7 +4,14 @@ import java.util.Stack;
 
 public class minElementSpaceOrder1 {
     public static void main(String[] args) {
-
+        push(-3);
+        push(0);
+        push(-2);
+        push(-1);
+        push(-8);
+        push(7);
+        push(1);
+        System.out.println(getMin());
     }
     public static int minEle = Integer.MAX_VALUE;
     // This min stack solution has O(1) space and time complexity
@@ -54,10 +61,11 @@ public class minElementSpaceOrder1 {
             return -1;
         }else {
             if (s.peek() >= minEle)
-                s.peek();
+                return s.peek();
             else if(s.peek() < minEle)
                 return minEle;
         }
         return -1;
     }
 }
+
