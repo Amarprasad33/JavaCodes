@@ -18,8 +18,6 @@ public class tr {
                     dp[i] = Math.max(dp[i], 1+dp[j]);
             }
         }
-
-
         return dp[n-1];
     }
 }
