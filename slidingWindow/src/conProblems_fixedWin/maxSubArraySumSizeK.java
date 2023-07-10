@@ -1,4 +1,4 @@
-package conProblems;
+package conProblems_fixedWin;
 
 public class maxSubArraySumSizeK {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package conProblems;
+package conProblems_fixedWin;
 
 import java.util.*;
 

@@ -1,6 +1,5 @@
-package conProblems;
+package conProblems_fixedWin;
 
-import java.nio.charset.IllegalCharsetNameException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
