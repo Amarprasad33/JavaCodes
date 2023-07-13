@@ -5,11 +5,12 @@ import java.util.*;
 public class longestSubstringWithKUniqueChar {
     public static void main(String[] args) {
         String str = "aabacbebebe";
-        System.out.println(largest_Subarray_of_Unique_Characters(str, 3));
+        System.out.println(largest_Substring_of_Unique_Characters(str, 3));
+
     }
 
     // This function returns the maximum size of the substring with k unique characters
-    public static int largest_Subarray_of_Unique_Characters(String s, int k){
+    public static int largest_Substring_of_Unique_Characters(String s, int k){
         int sum = 0, i = 0, j = 0, max = Integer.MIN_VALUE;
         int size = s.length();
         HashMap<Character, Integer> map = new HashMap<>();
@@ -40,5 +41,6 @@ public class longestSubstringWithKUniqueChar {
         }
         return max;
     }
+
 
 }
