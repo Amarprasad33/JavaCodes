@@ -45,7 +45,6 @@ public class longest_substring_without_repeating_chars {
     public static int lengthOfLongestSubstring(String s) {
         Set<Character> set = new HashSet<>();
         int i = 0, j=0, maxCount = 0;
-
         while(j < s.length()){
             if(!set.contains(s.charAt(j))){
                 set.add(s.charAt(j));

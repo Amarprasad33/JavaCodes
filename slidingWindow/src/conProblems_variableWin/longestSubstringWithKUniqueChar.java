@@ -4,10 +4,11 @@ import java.util.*;
 
 public class longestSubstringWithKUniqueChar {
     public static void main(String[] args) {
-        String str = "aabacbebebe";
-        System.out.println(largest_Substring_of_Unique_Characters(str, 3));
-
+        String str = "aabacbebgebe";
+//      System.out.println(largest_Substring_of_Unique_Characters(str, 3));
+        System.out.println(largestSubstringUniqueChars(str, 3));
     }
+
 
     // This function returns the maximum size of the substring with k unique characters
     public static int largest_Substring_of_Unique_Characters(String s, int k){
@@ -42,5 +43,29 @@ public class longestSubstringWithKUniqueChar {
         return max;
     }
 
+
+    ///
+    public static int largestSubstringUniqueChars(String s, int k) {
+        Set<Character> set = new HashSet<>();
+        int i = 0, j=0, maxCount = 0;
+        while(j < s.length()){
+            if(!set.contains(s.charAt(j)) && set.size() < k){
+                set.add(s.charAt(j));
+                j++;
+            } else if (set.size() == k){
+                set.add(s.charAt(j));
+                maxCount = Math.max(j-i+1, maxCount);
+                j++;
+            } else {
+                while (set.size() > k){
+                    set.remove(s.charAt(i));
+                    i++;
+                }
+                j++;
+            }
+        }
+
+        return maxCount;
+    }
 
 }
