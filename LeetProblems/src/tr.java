@@ -12,8 +12,22 @@ public class tr {
         String s1 = "abcd";
         String s2 = "pq";
 
-        System.out.println(s1);
-        System.out.println(mergeAlternately(s1, s2));
+//        System.out.println(s1);
+//        System.out.println(mergeAlternately(s1, s2));
+        String[] arr = { "flower","flow","flight" };
+        System.out.println(longestCommonPrefix(arr));
+    }
+
+    ///  #14
+    public static String longestCommonPrefix(String[] strs) {
+        if(strs.length == 0) return "";
+        String prefix = strs[0];
+        for(int i=1; i< strs.length; i++){
+            while(strs[i].indexOf(prefix) != 0){
+                prefix = prefix.substring(0, prefix.length()-1);
+            }
+        }
+        return prefix;
     }
 
     public static String mergeAlternately(String word1, String word2) {
