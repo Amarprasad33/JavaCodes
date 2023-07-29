@@ -7,8 +7,10 @@ import java.util.Queue;
 
 public class largestSubarraySumK {
     public static void main(String[] args) {
-        int[] arr = { 4, 1, 1, 1, 2, 1, 2, 3, 5, 2, 1 };
-        System.out.println(largest_Subarray_of_sizeK(arr, 8));
+//        int[] arr = { 4, 1, 1, 1, 2, 1, 2, 3, 5, 2, 1 };
+        int[] arr = { 4, 1, 1, 1, 1, 3, 5 };
+
+        System.out.println(largest_Subarray_of_sizeK(arr, 5));
     }
     // Returns the size of the longest sub array whose sum is = k
     public static int largest_Subarray_of_sizeK(int[] arr, int k){
@@ -30,6 +32,8 @@ public class largestSubarraySumK {
                     sum = sum - arr[i];
                     i++;
                 }
+                if(sum == k)
+                    max = Math.max(max, j-i+1);
                 j++;
             }
         }
