@@ -14,30 +14,34 @@ public class kClosestNumbers {
     // This code giving error because we cannot implement a pair in java in priority queue so we have to approach it differently
     public static void kClosest(int[] arr, int k, int x){
 
-        PriorityQueue<int[]> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Pair> maxHeap = new PriorityQueue<>((a, b) -> Integer.compare(b.fVal - x, a.fVal - x));
         for (int i = 0; i < arr.length; i++) {
             int absVal = Math.abs(arr[i]-x);
 
-            maxHeap.add(new int[]{absVal, arr[i]});
+            maxHeap.add(new Pair(absVal, arr[i]));
+//            System.out.println(absVal+ " -- "+ arr[i]);
             if(maxHeap.size() > k){
-                maxHeap.poll();
+                Pair p = maxHeap.poll();
+//                System.out.println(p.fVal+ " <--> "+ p.sVal);
             }
         }
         while (maxHeap.size()>0){
-            int[] ar = maxHeap.poll();
-            System.out.println(ar[1]);
+            Pair pb = maxHeap.poll();
+            System.out.println(pb.sVal);
+//            System.out.println(pb.fVal + " <--> " + pb.sVal);
+
         }
 
     }
 
-//            static class Pair<T>{
-//                T fVal;
-//                T sVal;
-//                Pair(T f, T s){
-//                    fVal = f;
-//                    sVal = s;
-//                }
-//            }
+            static class Pair{
+                int fVal;
+                int sVal;
+                Pair(int fVal, int sVal){
+                    this.fVal = fVal;
+                    this.sVal = sVal;
+                }
+            }
 
 }
 
